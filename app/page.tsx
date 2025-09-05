@@ -154,7 +154,7 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 1.0 }}
         >
           <h6 className="text-sm uppercase tracking-wide text-gray-500 font-medium">
-            From Energy to Tech, We've Got You Covered
+            From Energy to Tech, We&apos;ve Got You Covered
           </h6>
           <div className="w-full overflow-hidden py-10">
             <div className="flex animate-marquee whitespace-nowrap">
