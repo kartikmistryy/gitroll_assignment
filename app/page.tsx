@@ -24,7 +24,6 @@ const StaggerText = ({
       transition: {
         staggerChildren: 0.08,
         delayChildren: 0.02 * i,
-        ease: "easeOut",
       },
     }),
   };
@@ -35,7 +34,6 @@ const StaggerText = ({
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
       },
     },
     hidden: {
@@ -43,7 +41,6 @@ const StaggerText = ({
       y: 8,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
       },
     },
   };
@@ -98,7 +95,12 @@ export default function Home() {
     <div className="w-full h-full flex flex-col justify-center items-start">
       <section className="w-full h-full flex flex-col justify-center items-center min-h-screen">
         <main className="w-full h-full flex flex-col mt-auto">
-          <div className="relative w-20 h-20 mx-auto mb-5">
+          <motion.div
+            className="relative w-20 h-20 mx-auto mb-5"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <Image
               src={`/frame${activeFrame}.png`}
               alt="hero"
@@ -110,15 +112,30 @@ export default function Home() {
                   : "opacity-100 rotate-0"
               }`}
             />
-          </div>
-          <h1 className="md:text-[75px] text-xl font-bold text-center leading-none">
+          </motion.div>
+          <motion.h1 
+            className="md:text-[75px] text-xl font-bold text-center leading-none"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             Turn Network <br /> into Networth.
-          </h1>
-          <p className="md:text-xl text-xs font-normal text-center max-w-lg mx-auto text-gray-600 pt-5 pb-8">
+          </motion.h1>
+          <motion.p 
+            className="md:text-xl text-xs font-normal text-center max-w-lg mx-auto text-gray-600 pt-5 pb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
             Stop collecting contacts. Start building collaborations. Let your
             network work for you, powered by AI.
-          </p>
-          <div className="w-full h-full flex flex-row justify-center items-center gap-3">
+          </motion.p>
+          <motion.div 
+            className="w-full h-full flex flex-row justify-center items-center gap-3"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
             <button className="bg-[#181818] px-4 font-medium py-2 text-white rounded-full md:text-base text-xs transition-all duration-300 hover:bg-[#2e2e2e] hover:text-[#fff]">
               Join for free
             </button>
@@ -128,11 +145,16 @@ export default function Home() {
                 <FiArrowRight className="font-semibold" />
               </b>{" "}
             </button>
-          </div>
+          </motion.div>
         </main>
-        <div className="w-full h-full flex flex-col justify-center items-center mt-auto mb-5">
+        <motion.div 
+          className="w-full h-full flex flex-col justify-center items-center mt-auto mb-5"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
+        >
           <h6 className="text-sm uppercase tracking-wide text-gray-500 font-medium">
-            From Energy to Tech, We’ve Got You Covered
+            From Energy to Tech, We've Got You Covered
           </h6>
           <div className="w-full overflow-hidden py-10">
             <div className="flex animate-marquee whitespace-nowrap">
@@ -196,7 +218,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <section
